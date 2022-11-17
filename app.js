@@ -9,7 +9,8 @@ const app = express()
 
 dbConnect(app);
 
-app.use(cors())//intercepta todas las request que ingresarn y por deefecto deja pasar todas las request que vengan de cualquier servidor
+app.use(cors({origin:true}))//intercepta todas las request que ingresarn y por deefecto deja pasar todas las request que vengan de cualquier servidor
+// app.use(cors({origin: "http://stock-app-front.vercel.app/"}))//estamos indicando que solo se aceptan peticiones desde este origen
 
 app.use(express.json())
 
